@@ -17,7 +17,7 @@ Digital booking is a website that allows you to make accommodation reservations 
 Clone the repository using:
 SSH: 
 ```
-$ git clone 
+$ git clone https://github.com/Flor243/digitalbooking.git
 ```
 
 HTTPS: 
