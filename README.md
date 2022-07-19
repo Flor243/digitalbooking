@@ -33,7 +33,7 @@ or download the zip and then extract the files.
 
   - Create a SQL Schema in MySQL named "digitalbookingdb".
  
- - From MySQL Workbench application import de digitalbookingdb.sql file present on this link and run it.
+ - From MySQL Workbench application import de digital_booking_db.sql file present on this [link](https://drive.google.com/file/d/1jqVwUGFxyA3sh3gLiAxkbEGM53-fXPR9/view?usp=sharing) and run it.
  
  - Open the project in your IDE.
  
@@ -41,7 +41,7 @@ or download the zip and then extract the files.
  
  - Run the proyect from the IDE.
 
-You can see and run the tests scripts by making an import of the postman collection file included in this link.
+You can see and run the tests scripts by making an import of the postman collection file included in this [link](https://drive.google.com/file/d/16d8ZHhHRPznfVjZ8-50RyAnz7qj8eFCf/view?usp=sharing).
 Steps:
 - Open Postman
 - Import "ProyectoIntegradorGrupo2.postmman_collection.json"
@@ -61,6 +61,8 @@ $ npm i rsuite
 $ npm i react-google-recaptcha
 $ npm i react-rating-stars-component
 $ npm i react-datepicker
+$ npm install --save react-lazyload
+$ npm install --save react-google-recaptcha
 $ npm start
 ```
 
