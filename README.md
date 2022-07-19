@@ -22,7 +22,7 @@ $ git clone https://github.com/Flor243/digitalbooking.git
 
 HTTPS: 
 ```
-$ git clone 
+$ git clone git@github.com:Flor243/digitalbooking.git
 ```
 </br>
 or download the zip and then extract the files.
