@@ -1,0 +1,31 @@
+AWS Elastic Beanstalk es un PaaS (Plataforma como Servicio) AWS que permite crear aplicaciones y desplegarlas a un conjunto definido de Servicios, incluyendo Amazon EC2, Amazon S3, Servicio de notificaciones de amazon, Amazon CloudWatch, auto escalamiento, y balanceador de carga elásticos.
+
+Se pueden cargar muchas cosas dentro de EB en nuestro caso, deployamos un .jar con nuestro java pero tambien soporta Ruby, PHP, node.js, docker, etc. 
+
+Su implementacion se basa en cargar la aplicación y Elastic Beanstalk gestionará de manera automática los detalles de aprovisionamiento de capacidad, balanceo de carga, escalado y monitorización de estado de la aplicación, esto nos permitira centrarnos en el desarrollo de nuestro codigo.
+
+Cuando cargamos el .jar definimos dentro de application.properties la conexion hacia nuestra basa de datos en RDS, nuestra bd tiene cargados los datos necesarios para nuestra app y las direcciones URL de las imagenes las cuales esta almacenadas dentro de un S3 con acceso publico. 
+
+Luego realizaremos peticiones http desde nuestro front hacia EB.
+
+EL frontend esta desplegado estaticamente con un directorio build, el cual es privado y solo se puede acceder a travez de cloudfront. 
+
+
+#1 img bucket
+#2 RDS workbench
+#3 front bucket
+#4 front consultas api
+#5 cloudfront
+#6 Consultas http hacia EB
+#7 application.properties
+
+Nuestro diagrama no ha cambiado mucho del sprint pasado, los usuarios siguen acediendo a a un s3 privado donde esta alojada nuestra react aplication, este s3 es solamente accesible a travez de clodfront por un tema de seguridad y tambien para poder distribuir nuestros contenidos globalmente. Nuestro react realizara consultas http hacia nuestra API la cual esta alojada en un elastic beanstalk y este a su vez realiza consultas a nuestra base de datos que se encuantra en un RDS Mysql, esta RDS esta conectada a un bucket publico donde se almacenan nuestras imagenes
+
+La ultima implementacion ha sido el CI/CD del frontend donde se han configurado la conexion a nuestro S3, se crearon invalidaciones para poder actualizar nuestro cloudfront y un deploy para subir nuestra aplicacion actualizada, esto ha permitido que subir nuevas features sea mucho mas sencillo y rapido.
+
+BONUS TRACK  
+Como bonus creamos una pagina de error 404 donde estan nuestras mascotas del taller de softskills
+
+Muchas gracias por su atención estos fueron los avances presentados por el equipo. 
+Esperamos haber cumplido con todos sus requisitos :) 
+

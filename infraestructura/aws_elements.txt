@@ -1,0 +1,43 @@
+Amazon route 53 --> DNS
+Traduce nombres de dominio en direcciones IP --> ej 8.8.8.8 == google.com
+Crea la mejor ruta para cada usuario dependiendo de su ubicacion 
+Permite crear nuestro propio dominio
+
+AWS CloudFront CDN edge locations
+para evitar que se repitan accesos hasta nuestro servidor, 
+se almacena en la cache los archivos staticos de nuestra app.
+
+les acercamos una copia de nuestro contenido mas cerca de los usuarios (edge location)
+
+Distribucion del contenido de nuestro servidor a todo el mundo, 
+almacenando la cache en un lugar mas cercano a cada usuario.
+
+Distribucion de archivos globalmente y manejo de cache compartida.
+Los clientes accederan desde los puntos de precencia mas cercano (mas de 200) 
+En vez de hacerlo hasta la region (latencia >).
+Activar TTL (time to leave) esto permite que las edge locations almacenen una copia del 
+contenido (carga instantanea)
+cache global para q sea accedible globalmente con poca latencia
+
+
+S3
+Nos permite alojar archivos(fotos, archivos, videos, backups DB, etc) y paginas web staticas, 
+almacenadas en regiones especificas (25)
+
+Elastic Load Balancer
+Dsitribuye el trafico entrante entre varios destinos (AZ, EC2, etc)
+
+EC2
+Servidor virtual, conocido como instancias
+las instancias de uso general, como la T2, la T3 o la T4g, ofrecen una combinación de recursos 
+informáticos equilibrados. Se suelen poner en marcha en servicios que utilizan 
+recursos en partes iguales, como por ejemplo servidores web o repositorios de código.
+Las instancias M5 ofrecen equilibrio entre recursos de computación, 
+memoria y redes para una amplia variedad de cargas de trabajo. 
+
+RDS
+Amazon RDS for SQL Server facilita la configuración, la utilización
+y el escalado de las implementaciones de SQL Server en la nube.
+
+
+
